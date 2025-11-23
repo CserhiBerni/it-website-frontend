@@ -5,7 +5,6 @@ import "./index.css";
 
 import Layout from "./components/layout/Layout";
 import { HomePage } from "./pages/HomePage/HomePage";
-import { AboutPage } from "./pages/AboutPage/AboutPage";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +12,6 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <HomePage /> },
-      { path: "/about", element: <AboutPage /> },
     ],
   },
 ]);
