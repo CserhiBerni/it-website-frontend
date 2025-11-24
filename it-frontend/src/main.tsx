@@ -5,6 +5,7 @@ import "./index.css";
 
 import Layout from "./components/layout/Layout";
 import { HomePage } from "./pages/HomePage/HomePage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { path: "/", element: <HomePage /> },
+      { path: "/login", element: <LoginPage /> },
     ],
   },
 ]);

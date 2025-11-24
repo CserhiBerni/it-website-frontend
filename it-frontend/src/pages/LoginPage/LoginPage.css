@@ -1,0 +1,185 @@
+.login-page {
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.login-page-container {
+    width: 85%;
+    height: 110vh;
+    border-radius: 1rem;
+    margin: 0 auto;
+    box-shadow: 4px 8px 12px 8px #0000001f;
+    display: flex;
+    flex-direction: row;
+}
+
+.form-card {
+    width: 50%;
+    height: 100%;
+    background-color: #f9fafb;
+    border-radius: 1rem 0 0 1rem;
+}
+
+.switch-card {
+    padding: 2rem 5rem;
+    width: 50%;
+    height: 100%;
+    background-color: #0a204f;
+    border-radius: 0 1rem 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.switch-card h2 {
+    color: #f9fafb;
+    font-size: 4ch;
+    text-align: center;
+}
+
+.switch-card p {
+    color: #f9fafb;
+    font-size: 2ch;
+    text-align: center;
+}
+
+.switch-card ul {
+    list-style: none;
+    color: white;
+}
+
+.feature-list {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.switch-card svg {
+    margin-right: 1rem;
+}
+
+.switch-card button {
+    margin-top: auto;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    outline: 3px solid #f9fafb;
+    color: #f9fafb;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 2.5ch;
+    width: 30%;
+}
+
+.switch-card button:hover {
+    outline: 3px solid #0a204f;
+    color: #0a204f;
+    background-color: #f9fafb;
+
+}
+
+.form-card-login, .form-card-register {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+    color: #0a204f;
+}
+
+.form-card h1 {
+    align-self: center;
+    font-size: 5ch;
+    margin-bottom: 2rem;
+}
+
+.form-card-item {
+    margin-bottom: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    outline: 3px solid #0a204f;
+    border-radius: 5px;
+    padding: 0.5rem;
+    width: 80%;
+}
+
+.form-card-item p {
+    margin-left: 0.25rem;
+    font-size: 2ch;
+}
+
+.form-card-stay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.form-card-item input[type=text],
+.form-card-item input[type=password],
+.form-card-item input[type=email],
+.form-card-item input[type=tel] {
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 2ch;
+    width: 100%;
+}
+
+#stayloggedin {
+    margin-right: 0.5rem;
+}
+
+.submit-button {
+    align-self: center;
+    margin-top: auto;
+    padding: 1rem;
+    font-size: 2.5ch;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    outline: 3px solid #0a204f;
+    color: inherit;
+    cursor: pointer;
+    width: 30%;
+}
+
+.submit-button:hover {
+    outline: 3px solid #f9fafb;
+    color: #f9fafb;
+    background-color: #0a204f;
+}
+
+@media (max-width: 768px) {
+    .login-page-container {
+        flex-direction: column;
+    }
+
+    .form-card {
+        width: 100%;
+        border-radius: 1rem 1rem 0 0;
+    }
+
+    .switch-card {
+        width: 100%;
+        border-radius: 0 0 1rem 1rem;
+    }
+
+    .submit-button {
+        width: 50%;
+    }
+
+    .switch-card button {
+        width: 100%;
+    }
+}
