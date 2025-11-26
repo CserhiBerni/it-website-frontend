@@ -163,6 +163,7 @@
 @media (max-width: 768px) {
     .login-page-container {
         flex-direction: column;
+        width: 92.5%;
     }
 
     .form-card {
@@ -170,9 +171,22 @@
         border-radius: 1rem 1rem 0 0;
     }
 
+    .form-card-login {
+        height: 60vh;
+    }
+
+    .form-card-register {
+        height: 70vh;
+    }
+
+    .form-card-item {
+        width: 100%;
+    }
+
     .switch-card {
         width: 100%;
         border-radius: 0 0 1rem 1rem;
+        margin-bottom: 2rem;
     }
 
     .submit-button {

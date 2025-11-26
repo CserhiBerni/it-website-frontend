@@ -15,6 +15,38 @@ import { FaEnvelope, FaPhone, FaUnlock } from "react-icons/fa6";
 export const LoginPage = () => {
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
+  const [loginForm, setLoginForm] = useState({
+    username: "",
+    password: "",
+  });
+  const [registerForm, setRegisterForm] = useState({
+    username: "",
+    password: "",
+    email: "",
+    phone: ""
+  });
+
+  const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setLoginForm((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+
+    setRegisterForm((formData) => ({
+      ...formData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmitLogin = () => {
+    
+  }
 
   return (
     <div className="login-page">
@@ -26,7 +58,13 @@ export const LoginPage = () => {
               <label htmlFor="username">Username</label>
               <span className="form-card-item">
                 <FaUser size={25} />
-                <input type="text" name="username" id="username" />
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  value={loginForm.username}
+                  onChange={handleLoginChange}
+                />
               </span>
               <label htmlFor="password">Password</label>
               <span className="form-card-item">
@@ -49,17 +87,19 @@ export const LoginPage = () => {
                   type={isShowPass ? "text" : "password"}
                   name="password"
                   id="password"
+                  value={loginForm.password}
+                  onChange={handleLoginChange}
                 />
               </span>
               <span className="form-card-stay">
-                <input
-                  type="checkbox"
-                  name="stayloggedin"
-                  id="stayloggedin"
-                />
+                <input type="checkbox" name="stayloggedin" id="stayloggedin" />
                 <label htmlFor="stayloggedin">I want to stay signed in</label>
               </span>
-              <button className="submit-button" id="sign-in">
+              <button
+                className="submit-button"
+                id="sign-in"
+                onClick={handleSubmitLogin}
+              >
                 Sign In
               </button>
             </div>
@@ -101,7 +141,8 @@ export const LoginPage = () => {
               </span>
               <label htmlFor="phone">Phone number</label>
               <span className="form-card-item">
-                <FaPhone size={25} /><p>+36</p>
+                <FaPhone size={25} />
+                <p>+36</p>
                 <input type="tel" name="phone" id="phone" />
               </span>
               <button className="submit-button" id="sign-up">
