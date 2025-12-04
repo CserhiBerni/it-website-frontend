@@ -134,6 +134,7 @@
     text-align: center;
     font-size: 1.5ch;
     color: #0a204f;
+    flex: 1;
 }
 
 .featured-card .rating {
@@ -158,6 +159,95 @@
     color: #f9fafb;
 }
 
+.stats {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1e293b;
+}
+
+.stats h2 {
+    font-size: 5ch;
+    color: #f9fafb;
+    margin-top: 2rem;
+}
+
+.stats-cards {
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.stats-card {
+    background-color: #334155;
+    color: #f9fafb;
+    flex: 1;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: scale(1.025);
+}
+
+.stats-card svg {
+    margin: 2rem 0;
+    align-self: center;
+}
+
+.stats-card h3 {
+    text-align: center;
+    font-size: 4ch;
+    min-height: 3rem;
+    flex: 1;
+}
+
+.stats-card .description {
+    margin-top: 2rem;
+    text-align: center;
+    flex: 1;
+}
+
+.account {
+    height: fit-content;
+    width: 100%;
+    background-color: #f9fafb;
+    color: #111827;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.account h2 {
+    font-size: 5ch;
+    color: #111827;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.account button {
+    background: none;
+    border: 3px solid #111827;
+    color: #111827;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 2.5ch;
+    font-weight: bold;
+    margin: 2rem auto 4rem auto;
+}
+
 @media (max-width: 768px) {
     .featured {
         height: fit-content;
@@ -172,6 +262,7 @@
         height: fit-content;
         flex-direction: column;
         width: 90%;
+        margin-bottom: 3rem;
     }
 
     .featured-card {
@@ -187,5 +278,14 @@
     .featured-card .rating,
     .featured-card button {
         font-size: 2.5ch;
+    }
+
+    .stats-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .stats-card {
+        width: 80%;
     }
 }

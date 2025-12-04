@@ -1,4 +1,10 @@
-import { FaStar, FaStarHalfAlt } from "react-icons/fa";
+import {
+  FaGlobeEurope,
+  FaLightbulb,
+  FaPlane,
+  FaStar,
+  FaStarHalfAlt,
+} from "react-icons/fa";
 import "./HomePage.css";
 
 export const HomePage = () => {
@@ -80,25 +86,44 @@ export const HomePage = () => {
         </div>
       </section>
       <section className="stats">
-        <article className="stats-card">
-          <i></i>
-          <h3>Explore popular destinations</h3>
-          <p className="description"></p>
-        </article>
-        <article className="stats-card">
-          <i></i>
-          <h3>Explore popular destinations</h3>
-          <p className="description"></p>
-        </article>
-        <article className="stats-card">
-          <i></i>
-          <h3>Explore popular destinations</h3>
-          <p className="description"></p>
-        </article>
+        <h2>Why TravelMe?</h2>
+        <div className="stats-cards">
+          <article className="stats-card">
+            <h3>Handpicked Destinations</h3>
+            <p className="description">
+              We highlight only the best cities, beaches and cultural gems—no
+              endless scrolling, just quality picks.
+            </p>
+            <FaGlobeEurope size={45} />
+          </article>
+          <article className="stats-card">
+            <h3>Smart Trip Planning</h3>
+            <p className="description">
+              Use our built-in planner to estimate costs, compare routes and
+              build the perfect itinerary in minutes.
+            </p>
+            <FaPlane size={45} />
+          </article>
+          <article className="stats-card">
+            <h3>Personalized Experience</h3>
+            <p className="description">
+              Create an account to access custom suggestions, bookmarked
+              destinations and tailored travel ideas.
+            </p>
+            <FaLightbulb size={45} />
+          </article>
+          <article className="stats-card">
+            <h3>Trusted by Travelers</h3>
+            <p className="description">
+              Our platform is built for clarity—no hidden fees, no fluff. Just
+              useful travel information you can trust.
+            </p>
+            <FaStar size={45} />
+          </article>
+        </div>
       </section>
-      <section className="planner"></section>
       <section className="account">
-        <h3>Ready for your next adventure?</h3>
+        <h2>Ready for your next adventure?</h2>
         <button>Create Account</button>
       </section>
     </div>
