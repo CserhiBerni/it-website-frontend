@@ -1,7 +1,5 @@
+import { FaStar, FaStarHalfAlt } from "react-icons/fa";
 import "./HomePage.css";
-import bali from '../../images/bali.jpg'
-import hawaii from '../../images/hawaii.jpg'
-import maldives from '../../images/maldives.jpg'
 
 export const HomePage = () => {
   return (
@@ -13,27 +11,73 @@ export const HomePage = () => {
             next destination
           </h1>
           <h2 className="hero-subtitle">
-            Plan trips, explore cities and start your journey with <span className="brand">TravelMe</span>.
+            Plan trips, explore cities and start your journey with{" "}
+            <span className="brand">TravelMe</span>.
           </h2>
           <button>Start Exploring</button>
         </article>
       </section>
       <section className="featured">
-        <article className="featured-card">
-          <img src={bali} alt="" />
-          <h3>Bali</h3>
-          <p className="description"></p>
-        </article>
-        <article className="featured-card">
-          <img src={hawaii} alt="" />
-          <h3>Hawaii</h3>
-          <p className="description"></p>
-        </article>
-        <article className="featured-card">
-          <img src={maldives} alt="" />
-          <h3>Maldives</h3>
-          <p className="description"></p>
-        </article>
+        <h2>Featured Destinations</h2>
+        <div className="featured-cards">
+          <article className="featured-card">
+            <div className="image-box"></div>
+            <div className="content-box">
+              <h3>Bali</h3>
+              <p className="description">
+                Tropical paradise known for beaches, temples and lush green
+                landscapes.
+              </p>
+              <div className="rating">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+                <span>4.9</span>
+              </div>
+              <button>Learn More</button>
+            </div>
+          </article>
+          <article className="featured-card">
+            <div className="image-box"></div>
+            <div className="content-box">
+              <h3>Hawaii</h3>
+              <p className="description">
+                Volcanic islands offering pristine beaches, surf spots and
+                breathtaking sunsets.
+              </p>
+              <div className="rating">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <span>5.0</span>
+              </div>
+              <button>Learn More</button>
+            </div>
+          </article>
+          <article className="featured-card">
+            <div className="image-box"></div>
+            <div className="content-box">
+              <h3>Maldives</h3>
+              <p className="description">
+                Crystal-clear waters, white sand beaches and world-famous
+                overwater villas.
+              </p>
+              <div className="rating">
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStar />
+                <FaStarHalfAlt />
+                <span>4.8</span>
+              </div>
+              <button>Learn More</button>
+            </div>
+          </article>
+        </div>
       </section>
       <section className="stats">
         <article className="stats-card">
