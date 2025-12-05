@@ -35,11 +35,11 @@ export const HomePage = () => {
                 landscapes.
               </p>
               <div className="rating">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalfAlt />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStarHalfAlt color="#fbbf24" />
                 <span>4.9</span>
               </div>
               <button>Learn More</button>
@@ -54,11 +54,11 @@ export const HomePage = () => {
                 breathtaking sunsets.
               </p>
               <div className="rating">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
                 <span>5.0</span>
               </div>
               <button>Learn More</button>
@@ -73,11 +73,11 @@ export const HomePage = () => {
                 overwater villas.
               </p>
               <div className="rating">
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStar />
-                <FaStarHalfAlt />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStar color="#fbbf24" />
+                <FaStarHalfAlt color="#fbbf24" />
                 <span>4.8</span>
               </div>
               <button>Learn More</button>
@@ -126,6 +126,9 @@ export const HomePage = () => {
         <h2>Ready for your next adventure?</h2>
         <button>Create Account</button>
       </section>
+      <footer>
+        <p>&copy; 2025 TravelMe - Made for a web development project.</p>
+      </footer>
     </div>
   );
 };

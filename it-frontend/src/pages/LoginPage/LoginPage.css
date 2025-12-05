@@ -1,32 +1,34 @@
 .login-page {
-    height: fit-content;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    margin: 2rem auto;
+    min-height: calc(100vh - 4rem);
     padding: 1rem;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .login-page-container {
-    width: 85%;
-    height: 110vh;
+    width: 100%;
+    max-width: 69rem;
+    min-height: 32rem;
     border-radius: 1rem;
     margin: 0 auto;
     box-shadow: 4px 8px 12px 8px #0000001f;
     display: flex;
     flex-direction: row;
+    overflow: hidden;
 }
 
 .form-card {
-    width: 50%;
-    height: 100%;
     background-color: #f9fafb;
     border-radius: 1rem 0 0 1rem;
+    display: flex;
+    flex: 1 1 50%;
 }
 
 .switch-card {
+    flex: 1 1 50%;
     padding: 2rem 5rem;
-    width: 50%;
-    height: 100%;
     background-color: #0a204f;
     border-radius: 0 1rem 1rem 0;
     display: flex;
@@ -51,6 +53,8 @@
 .switch-card ul {
     list-style: none;
     color: #f9fafb;
+    padding: 0;
+    margin: 0;
 }
 
 .feature-list {
@@ -82,10 +86,10 @@
     outline: 3px solid #0a204f;
     color: #0a204f;
     background-color: #f9fafb;
-
 }
 
 .form-card-login, .form-card-register {
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -121,6 +125,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 0.5rem;
 }
 
 .form-card-item input[type=text],
@@ -161,15 +166,19 @@
 }
 
 @media (max-width: 768px) {
+    .login-page {
+        padding: 1rem 0.5rem;
+        min-height: auto;
+    }
+
     .login-page-container {
         flex-direction: column;
-        width: 92.5%;
-        height: 200vh;
+        max-width: 32rem;
+        min-height: auto;
     }
 
     .form-card {
         width: 100%;
-        height: 100vh;
         border-radius: 1rem 1rem 0 0;
     }
 
@@ -179,17 +188,17 @@
 
     .switch-card {
         width: 100%;
-        height: 100vh;
         border-radius: 0 0 1rem 1rem;
-        padding: 1rem;
+        padding: 1.5rem;
     }
 
     .submit-button {
         width: 60%;
+        margin-top: 1rem;
     }
 
     .switch-card button {
-        width: 80%;
+        width: 60%;
         margin-bottom: 2rem;
     }
 }
