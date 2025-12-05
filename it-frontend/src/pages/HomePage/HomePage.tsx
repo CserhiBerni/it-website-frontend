@@ -6,8 +6,11 @@ import {
   FaStarHalfAlt,
 } from "react-icons/fa";
 import "./HomePage.css";
+import { useNavigate } from "react-router-dom";
 
 export const HomePage = () => {
+  let navigate = useNavigate();
+
   return (
     <div className="home-page">
       <section className="hero">
@@ -20,7 +23,13 @@ export const HomePage = () => {
             Plan trips, explore cities and start your journey with{" "}
             <span className="brand">TravelMe</span>.
           </h2>
-          <button>Start Exploring</button>
+          <button
+            onClick={() => {
+              navigate("/destinations");
+            }}
+          >
+            Start Exploring
+          </button>
         </article>
       </section>
       <section className="featured">
@@ -42,7 +51,13 @@ export const HomePage = () => {
                 <FaStarHalfAlt color="#fbbf24" />
                 <span>4.9</span>
               </div>
-              <button>Learn More</button>
+              <button
+                onClick={() => {
+                  navigate("/destinations");
+                }}
+              >
+                Learn More
+              </button>
             </div>
           </article>
           <article className="featured-card">
@@ -61,7 +76,13 @@ export const HomePage = () => {
                 <FaStar color="#fbbf24" />
                 <span>5.0</span>
               </div>
-              <button>Learn More</button>
+              <button
+                onClick={() => {
+                  navigate("/destinations");
+                }}
+              >
+                Learn More
+              </button>
             </div>
           </article>
           <article className="featured-card">
@@ -80,7 +101,13 @@ export const HomePage = () => {
                 <FaStarHalfAlt color="#fbbf24" />
                 <span>4.8</span>
               </div>
-              <button>Learn More</button>
+              <button
+                onClick={() => {
+                  navigate("/destinations");
+                }}
+              >
+                Learn More
+              </button>
             </div>
           </article>
         </div>
@@ -124,7 +151,13 @@ export const HomePage = () => {
       </section>
       <section className="account">
         <h2>Ready for your next adventure?</h2>
-        <button>Create Account</button>
+        <button
+          onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Create Account
+        </button>
       </section>
       <footer>
         <p>&copy; 2025 TravelMe - Made for a web development project.</p>

@@ -22,39 +22,44 @@ export const DestinationsPage = () => {
     });
 
   return (
-    <div className="destinations-page">
-      <header className="destinations-header">
-        <h1>Destinations</h1>
-        <p>
-          Explore handpicked places around the world — from tropical islands and
-          cultural capitals to vibrant cities and calm coastal escapes.
-        </p>
-      </header>
-      <div className="destinations-controls">
-        <input
-          type="text"
-          className="destinations-search"
-          placeholder="Search by destination name or description…"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button
-          type="button"
-          className="destinations-sort-button"
-          onClick={() => {
-            setSortDesc(!sortDesc);
-          }}
-        >
-          {sortDesc
-            ? "Sort by rating: High → Low"
-            : "Sort by rating: Low → High"}
-        </button>
+    <div>
+      <div className="destinations-page">
+        <header className="destinations-header">
+          <h1>Destinations</h1>
+          <p>
+            Explore handpicked places around the world — from tropical islands
+            and cultural capitals to vibrant cities and calm coastal escapes.
+          </p>
+        </header>
+        <div className="destinations-controls">
+          <input
+            type="text"
+            className="destinations-search"
+            placeholder="Search by destination name or description…"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button
+            type="button"
+            className="destinations-sort-button"
+            onClick={() => {
+              setSortDesc(!sortDesc);
+            }}
+          >
+            {sortDesc
+              ? "Sort by rating: High → Low"
+              : "Sort by rating: Low → High"}
+          </button>
+        </div>
+        <section className="destinations-grid">
+          {visibleDestinations.map((destination) => (
+            <Destination key={destination.name} {...destination} />
+          ))}
+        </section>
       </div>
-      <section className="destinations-grid">
-        {visibleDestinations.map((destination) => (
-          <Destination key={destination.name} {...destination} />
-        ))}
-      </section>
+      <footer>
+        <p>&copy; 2025 TravelMe - Made for a web development project.</p>
+      </footer>
     </div>
   );
 };
