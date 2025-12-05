@@ -19,12 +19,12 @@ export const LoginPage = () => {
     username: "",
     password: "",
   });
-  const [registerForm, setRegisterForm] = useState({
+  /* const [registerForm, setRegisterForm] = useState({
     username: "",
     password: "",
     email: "",
     phone: "",
-  });
+  }); */
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -35,14 +35,14 @@ export const LoginPage = () => {
     }));
   };
 
-  const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  /* const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setRegisterForm((formData) => ({
       ...formData,
       [name]: value,
     }));
-  };
+  }; */
 
   const handleSubmitLogin = () => {};
 
