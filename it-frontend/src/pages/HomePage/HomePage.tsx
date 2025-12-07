@@ -149,6 +149,22 @@ export const HomePage = () => {
           </article>
         </div>
       </section>
+      <section className="teaser">
+        <h2>Plan your next trip in minutes</h2>
+        <p>
+          Use our smart Trip Planner to estimate your travel costs, adjust
+          comfort level, add extras, and instantly see how much your journey
+          would cost per person.
+        </p>
+        <button
+          className="teaser-button"
+          onClick={() => {
+            navigate("/planner");
+          }}
+        >
+          Try the Trip Planner
+        </button>
+      </section>
       <section className="account">
         <h2>Ready for your next adventure?</h2>
         <button

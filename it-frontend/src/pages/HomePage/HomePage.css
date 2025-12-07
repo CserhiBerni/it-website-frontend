@@ -216,6 +216,50 @@
     flex: 1;
 }
 
+.teaser {
+    width: 100%;
+    padding: 4rem 2rem;
+    background-color: #0a204f;
+    color: #f9fafb;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+}
+
+.teaser h2 {
+    font-size: 5ch;
+    color: #f9fafb;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.teaser p {
+  font-size: 2ch;
+  line-height: 1.6;
+  max-width: 80%;
+  color: #f9fafb;
+}
+
+.teaser button {
+    background: none;
+    border: 3px solid #f9fafb;
+    color: #f9fafb;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 2.5ch;
+    font-weight: bold;
+    margin: 2rem auto 4rem auto;
+}
+
+.teaser button:hover {
+    background: #f9fafb;
+    border: 3px solid #0a204f;
+    color: #0a204f;
+}
+
 .account {
     height: fit-content;
     width: 100%;
