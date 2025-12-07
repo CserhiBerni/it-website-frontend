@@ -47,8 +47,8 @@ export const DestinationsPage = () => {
             }}
           >
             {sortDesc
-              ? "Sort by rating: High → Low"
-              : "Sort by rating: Low → High"}
+              ? "Sort by rating: High > Low"
+              : "Sort by rating: Low > High"}
           </button>
         </div>
         <section className="destinations-grid">

@@ -154,7 +154,7 @@
     border: none;
     border-radius: 5px;
     outline: 3px solid #0a204f;
-    color: inherit;
+    color: #0a204f;
     cursor: pointer;
     width: 30%;
 }

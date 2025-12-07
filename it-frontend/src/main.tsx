@@ -8,20 +8,26 @@ import { HomePage } from "./pages/HomePage/HomePage";
 import { LoginPage } from "./pages/LoginPage/LoginPage";
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
 import { DestinationsPage } from "./pages/DestinationsPage/DestinationsPage";
+import { PlannerPage } from "./pages/PlannerPage/PlannerPage";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        { path: "/", element: <HomePage /> },
+        { path: "/destinations", element: <DestinationsPage /> },
+        { path: "/planner", element: <PlannerPage /> },
+        { path: "/login", element: <LoginPage /> },
+        { path: "*", element: <ErrorPage /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <Layout />,
-    children: [
-      { path: "/", element: <HomePage /> },
-      { path: "/it-website-frontend", element: <HomePage /> },
-      { path: "/destinations", element: <DestinationsPage /> },
-      { path: "/login", element: <LoginPage /> },
-      { path: "*", element: <ErrorPage /> },
-    ],
-  },
-]);
+    basename: import.meta.env.BASE_URL,
+  }
+);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

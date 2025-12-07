@@ -254,6 +254,23 @@
 }
 
 @media (max-width: 768px) {
+    .hero {
+        padding: 2rem;
+    }
+
+    .hero-content {
+        margin: 0;
+        background-color: rgba(10, 32, 79, 0.4);
+    }
+
+    .hero-title {
+        margin-bottom: 1rem;
+    }
+
+    .hero button {
+        margin-top: 2rem;
+    }
+
     .featured {
         height: fit-content;
         width: 100%;

@@ -18,7 +18,7 @@
     display: flex;
     align-items: center;
     text-decoration: none;
-    color: inherit;
+    color: #f9fafb;
 }
 
 .nav-logo {
@@ -46,7 +46,7 @@
 }
 
 .nav-links a {
-    color: inherit;
+    color: #f9fafb;
     text-decoration: none;
     font-size: 1.75ch;
 }
@@ -59,7 +59,7 @@
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    color: inherit;
+    color: #f9fafb;
     text-decoration: none;
     font-weight: 500;
 }
@@ -72,7 +72,7 @@
     display: none;
     background: none;
     border: none;
-    color: inherit;
+    color: #f9fafb;
     font-size: 2.5ch;
     cursor: pointer;
     padding: 0.25rem;
