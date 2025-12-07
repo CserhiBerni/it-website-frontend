@@ -145,6 +145,11 @@
     margin-right: 0.5rem;
 }
 
+.login-errors, .register-errors {
+    color: #a51616;
+    margin-bottom: 0.5rem;
+}
+
 .submit-button {
     align-self: center;
     margin-top: auto;

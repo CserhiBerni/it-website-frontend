@@ -11,20 +11,24 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { FaEnvelope, FaPhone, FaUnlock } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState<boolean>(true);
   const [isShowPass, setIsShowPass] = useState<boolean>(false);
   const [loginForm, setLoginForm] = useState({
     username: "",
     password: "",
   });
-  /* const [registerForm, setRegisterForm] = useState({
-    username: "",
-    password: "",
+  const [registerForm, setRegisterForm] = useState({
+    rusername: "",
+    rpassword: "",
     email: "",
     phone: "",
-  }); */
+  });
+  const [errors, setErrors] = useState<string[]>([]);
+  const passwordRegex = /^(?=.*[A-Za-z])(?=.*[0-9]).+$/;
 
   const handleLoginChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -35,16 +39,96 @@ export const LoginPage = () => {
     }));
   };
 
-  /* const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleRegisterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
 
     setRegisterForm((formData) => ({
       ...formData,
       [name]: value,
     }));
-  }; */
+  };
 
-  const handleSubmitLogin = () => {};
+  const handleSubmitLogin = () => {
+    let errorsCount = 0;
+    setErrors([]);
+
+    if (loginForm.username === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Username"]);
+    } else if (
+      loginForm.username.length < 6 ||
+      loginForm.username.length > 16 ||
+      loginForm.username.includes(" ")
+    ) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Username"]);
+    }
+
+    if (loginForm.password === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Password"]);
+    } else if (
+      loginForm.password.length < 10 ||
+      loginForm.password.length > 24 ||
+      !passwordRegex.test(loginForm.password)
+    ) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Password"]);
+    }
+
+    if (errorsCount === 0) {
+      navigate("/");
+    }
+  };
+
+  const handleSubmitRegister = () => {
+    let errorsCount = 0;
+    setErrors([]);
+
+    if (registerForm.rusername === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Username"]);
+    } else if (
+      registerForm.rusername.length < 6 ||
+      registerForm.rusername.length > 16 ||
+      registerForm.rusername.includes(" ")
+    ) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Username"]);
+    }
+
+    if (registerForm.rpassword === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Password"]);
+    } else if (
+      registerForm.rpassword.length < 10 ||
+      registerForm.rpassword.length > 24 ||
+      !passwordRegex.test(registerForm.rpassword)
+    ) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Password"]);
+    }
+
+    if (registerForm.email === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Email"]);
+    } else if (!registerForm.email.includes("@")) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Email"]);
+    }
+
+    if (registerForm.phone === "") {
+      errorsCount++;
+      setErrors((err) => [...err, "Missing Phone"]);
+    } else if (registerForm.phone.length !== 9) {
+      errorsCount++;
+      setErrors((err) => [...err, "Invalid Phone"]);
+    }
+
+    if (errorsCount === 0) {
+      navigate("/");
+    }
+  };
 
   return (
     <div>
@@ -63,6 +147,7 @@ export const LoginPage = () => {
                     id="username"
                     value={loginForm.username}
                     onChange={handleLoginChange}
+                    required
                   />
                 </span>
                 <label htmlFor="password">Password</label>
@@ -88,6 +173,7 @@ export const LoginPage = () => {
                     id="password"
                     value={loginForm.password}
                     onChange={handleLoginChange}
+                    required
                   />
                 </span>
                 <span className="form-card-stay">
@@ -98,6 +184,7 @@ export const LoginPage = () => {
                   />
                   <label htmlFor="stayloggedin">I want to stay signed in</label>
                 </span>
+                <p className="login-errors">{errors.join(", ")}</p>
                 <button
                   className="submit-button"
                   id="sign-in"
@@ -112,7 +199,14 @@ export const LoginPage = () => {
                 <label htmlFor="reg-username">Username</label>
                 <span className="form-card-item">
                   <FaUser size={25} />
-                  <input type="text" name="reg-username" id="reg-username" />
+                  <input
+                    type="text"
+                    name="rusername"
+                    id="rusername"
+                    value={registerForm.rusername}
+                    onChange={handleRegisterChange}
+                    required
+                  />
                 </span>
                 <label htmlFor="reg-password">Password</label>
                 <span className="form-card-item">
@@ -133,22 +227,44 @@ export const LoginPage = () => {
                   )}
                   <input
                     type={isShowPass ? "text" : "password"}
-                    name="reg-password"
-                    id="reg-password"
+                    name="rpassword"
+                    id="rpassword"
+                    value={registerForm.rpassword}
+                    onChange={handleRegisterChange}
+                    required
                   />
                 </span>
                 <label htmlFor="email">Email adress</label>
                 <span className="form-card-item">
                   <FaEnvelope size={25} />
-                  <input type="email" name="email" id="email" />
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    value={registerForm.email}
+                    onChange={handleRegisterChange}
+                    required
+                  />
                 </span>
                 <label htmlFor="phone">Phone number</label>
                 <span className="form-card-item">
                   <FaPhone size={25} />
                   <p>+36</p>
-                  <input type="tel" name="phone" id="phone" />
+                  <input
+                    type="tel"
+                    name="phone"
+                    id="phone"
+                    value={registerForm.phone}
+                    onChange={handleRegisterChange}
+                    required
+                  />
                 </span>
-                <button className="submit-button" id="sign-up">
+                <p className="register-errors">{errors.join(", ")}</p>
+                <button
+                  className="submit-button"
+                  id="sign-up"
+                  onClick={handleSubmitRegister}
+                >
                   Sign Up
                 </button>
               </div>
@@ -211,6 +327,7 @@ export const LoginPage = () => {
             <button
               onClick={() => {
                 setIsLogin(!isLogin);
+                setErrors([]);
               }}
             >
               {isLogin ? "Sign up" : "Sign in"}
