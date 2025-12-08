@@ -13,13 +13,13 @@
 }
 
 .destinations-header h1 {
-    font-size: 2.5rem;
+    font-size: 5ch;
     color: #111827;
     margin-bottom: 0.75rem;
 }
 
 .destinations-header p {
-    font-size: 1rem;
+    font-size: 2ch;
     color: #0a204f;
 }
 
@@ -47,7 +47,7 @@
     border-radius: 0.5rem;
     border: 1px solid #111827;
     outline: none;
-    font-size: 0.95rem;
+    font-size: 1.75ch;
     color: #111827;
     background-color: #f9fafb;
     box-sizing: border-box;
@@ -58,7 +58,7 @@
     padding: 0.6rem 1.2rem;
     border-radius: 0.5rem;
     border: none;
-    font-size: 0.95rem;
+    font-size: 2ch;
     font-weight: 500;
     cursor: pointer;
     background-color: #3b82f6;
@@ -89,7 +89,7 @@
     }
 
     .destinations-header h1 {
-        font-size: 2rem;
+        font-size: 4ch;
     }
 
     .destinations-controls {

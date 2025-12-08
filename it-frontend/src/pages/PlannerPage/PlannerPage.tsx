@@ -25,7 +25,9 @@ export const PlannerPage = () => {
   let totalPerPerson = 0;
   let perPersonPerDay = 0;
 
-  const selectedDestination = destinations.find((d) => d.name === selectedName);
+  const selectedDestination = destinations.find(
+    (destination) => destination.name === selectedName
+  );
 
   if (selectedDestination && days > 0 && people > 0) {
     const base = selectedDestination.baseCost;
